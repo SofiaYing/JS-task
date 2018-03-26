@@ -1,0 +1,18 @@
+#leftOut{
+    margin-left: 20px;
+}
+#show{
+    display: flex;
+    align-items: flex-end;
+}
+.list{
+    display: inline-block; 
+    width: 20px;
+    margin-right: 1px;
+    background-color: brown;
+    color: white;
+    text-align: center;
+    vertical-align:text-bottom;
+    font-size: 2px;
+}
+ 

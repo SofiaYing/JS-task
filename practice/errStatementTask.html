@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>errStatementTask</title>
+</head>
+<body>
+  <input id="numInput" type="text" placeholder="请输入一个10-100之间的数字">
+  <p id="prompt"></p>
+  <button id="btnCheck">确认</button>
+
+  <script>
+    var numInput = document.getElementById("numInput");
+    var num = numInput.value;
+    var errShow = document.getElementById("prompt");
+    var btnCheck = document.getElementById("btnCheck");
+    btnCheck.addEventListener("click",myInput,false);    
+    function myInput(){
+      try {
+        if(isNaN(num))  throw "不是数字";
+        if(num>100)  throw "数字大于100";
+        if(num<10)  throw "数字小于10" ;
+        if(num=='')  throw "内容为空！";
+      } catch (error) {
+        errShow.innerHTML = "输入的数值" + error;
+      }
+      finally{
+        numInput.value = "";
+      }
+    }
+  </script>
+</body>
+</html>
