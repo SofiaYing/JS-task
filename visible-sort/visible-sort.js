@@ -126,17 +126,34 @@ function insertShow(ops,ele,val){
 }
 //方法一：删除元素
 function delShow(ops,ele){
-    var count = ele.childNodes.length;
     if(count===0){
         alert("当前队列已为空！请先添加数字");
     }
     else{
         if(ops==="left"){
-            ele.removeChild(ele.firstChild);
+            var valLeft = ele.firstChild.innerHTML;
+            var mesLeft = confirm("是否删除"+valLeft+"?");
+            if(mesLeft){
+                myArr.shift();
+                ele.removeChild(ele.firstChild);
+                count--;
+            }
+            else{
+                initInput(input);
+            }
 
         }
         else if(ops==="right"){
-            ele.removeChild(ele.lastChild);
+            var valRight = ele.lastChild.innerHTML;
+            var mesRight = confirm("是否删除"+valRight+"?");
+            if(mesRight){
+                myArr.pop(); 
+                ele.removeChild(ele.lastChild);
+                count--;
+            }
+            else{
+                initInput(input);
+            }
         }
     }
 }
