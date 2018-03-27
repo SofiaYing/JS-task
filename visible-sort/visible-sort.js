@@ -177,7 +177,8 @@ function bubbleSort(arr){
     for(outer=num;outer>1;outer--){
         var flag = true;
         for(var inner=0;inner<outer-1;inner++){
-            if(arr[inner]>arr[inner+1]){
+            if(+arr[inner] > +arr[inner+1]){   
+                //input默认传入字符串，+号会尝试把字符串转换为数字，比较字符串会出现100<12的情况
                 var temp = arr[inner];
                 arr[inner] = arr[inner+1];
                 arr[inner+1] = temp;
