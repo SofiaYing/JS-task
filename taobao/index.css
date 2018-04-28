@@ -10,10 +10,10 @@ html,body{
   height: 1000px;      /*此处为什么*/
 }
 .wrapper{              
-  /* 有必要设置么？ */
   width: 100%;
   height: 100%;
 }
+/* 导航栏 */
 .wrapper .top-nav-wrap{
   width: 100%;
   height: 35px;
@@ -35,7 +35,6 @@ html,body{
   line-height: 35px;
 }
 
-
 .wrapper .top-nav-wrap .top-nav li a:link{
   color: #3c3c3c;
 }
@@ -54,26 +53,32 @@ html,body{
 }
 .wrapper .top-nav-wrap .top-nav .bgPic{
   display: inline-block;
-  width: 6px;
-  height: 3px;
+  width: 10px;
+  height: 10px;
   vertical-align: middle;
   background-size: 100% 100%;
+  margin-bottom: 2px;
 }
+/* 用::before{content:url(img/xsj.png)}可以保持原图片大小，不用背景来约束 */
 .wrapper .top-nav-wrap .top-nav .xsjPic{
-  background-image: url();
+  background-image: url("img/xsj.png");
 }
 .wrapper .top-nav-wrap .top-nav .shopCarPic{
   width: 12px;
   height: 12px;
-  background-image: url();
+  background-image: url("img/shopCar.png");
 }
 .wrapper .top-nav-wrap .top-nav .collectionPic{
   width: 12px;
   height: 11px;
-  background-image: url();
+  background-image: url("img/collection.png");
 }
 .wrapper .top-nav-wrap .top-nav .webNavPic{
-  width: 8px;
-  height: 8px;
-  background-image: url();
+  background-image: url("img/nav.png");
+}
+/* 搜索栏 */
+.wrapper .search-wrap{
+  width: 100%;
+  height: 97px;
+  
 }

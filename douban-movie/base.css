@@ -1,0 +1,62 @@
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+a{
+  text-decoration: none;
+  color: #333;
+}
+body{
+  background-color: white;
+  font-size: 12px;
+  line-height: 1.2;
+  color:#aaa;
+}
+header{
+  height: 30px;
+}
+main{
+  height: calc(100vh - 30px - 50px);   
+  /* footer设置为50px即可 */
+  /* 用于动态计算长度值。需要注意的是，运算符前后都需要保留一个空格 */
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch; /* ios上增加弹性 */
+}
+
+main>section{
+  display: none;
+}
+main>section:first-child{
+  display: block;
+}
+
+
+/* footer */
+footer{
+/* 固定页脚，不要用fixed，会有很多问题 */
+  height: 50px;
+  display: flex;
+  border-top: 1px solid #ccc;
+}
+footer>div{
+  flex:1;
+  text-align:center;
+  display: flex;
+  flex-direction: column;
+}
+footer>div span{
+  flex: 1;
+  padding-top: 3px;
+}
+/* .icon-wellReceived::before{
+  content:url("img/well-r.png"); 
+} */
+
+footer .active{
+  color: #111;
+}
+
+
+
+
