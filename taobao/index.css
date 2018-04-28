@@ -8,6 +8,10 @@ html,body{
   width: 100%;
   background: #f4f4f4;
   height: 1000px;      /*此处为什么*/
+  color: #3c3c3c;
+}
+a:visited{
+  color: #3c3c3c;
 }
 .wrapper{              
   width: 100%;
