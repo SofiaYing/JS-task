@@ -3,11 +3,15 @@
   padding: 0px;
   box-sizing: border-box;
 }
+html,body{
+  height: 100%;
+}
 a{
   text-decoration: none;
   color: #333;
 }
 body{
+  position: relative;
   background-color: white;
   font-size: 12px;
   line-height: 1.2;
@@ -17,7 +21,7 @@ header{
   height: 30px;
 }
 main{
-  height: calc(100vh - 30px - 50px);   
+  height: calc(100vh - 30px - 50px);
   /* footer设置为50px即可 */
   /* 用于动态计算长度值。需要注意的是，运算符前后都需要保留一个空格 */
   overflow: scroll;
@@ -30,8 +34,53 @@ main>section{
 main>section:first-child{
   display: block;
 }
+/* movie item */
+.item{
+  border-bottom: 1px solid #ccc;
+  padding: 10px 0px;
+  margin-left: 10px;
+}
+.item a{
+  display: block;
+  display: flex;
+}
+.item .cover-image, .item .cover-image img{
+  width: 70px;
+}
+.item .movie-instruction{
+  flex: 1;
+  padding-left: 10px;
+}
+.item .movie-instruction h2{
+  font-size: 16px;
+}
+.item .movie-instruction .detail{
+  color: #999;
+  margin-top: 4px;
+}
+.item .movie-instruction .score{
+  vertical-align: text-top;
+  line-height: 11px;
+}
 
-
+.starFull{
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-image: url('img/star.png');
+}
+.starHalf{
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-image: url('img/star-half.png');
+}
+.starBlank{
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-image: url('img/star-blank.png');
+}
 /* footer */
 footer{
 /* 固定页脚，不要用fixed，会有很多问题 */
@@ -49,10 +98,6 @@ footer>div span{
   flex: 1;
   padding-top: 3px;
 }
-/* .icon-wellReceived::before{
-  content:url("img/well-r.png"); 
-} */
-
 footer .active{
   color: #111;
 }
