@@ -23,7 +23,7 @@ header{
 }
 header .search-input{
   border-radius: 10px;
-  margin:10px 10px;
+  margin:10px;
   height: 100%;
   display: flex;
   background: rgb(251, 251, 251);
@@ -45,7 +45,7 @@ header input::-webkit-input-placeholder{
   color: #dad6d6;
 }
 main{
-  height: calc(100vh - 30px - 10px - 50px);
+  height: calc(100vh - 30px - 20px - 50px);
   /* footer设置为50px即可 */
   /* 用于动态计算长度值。需要注意的是，运算符前后都需要保留一个空格 */
   overflow: scroll;
