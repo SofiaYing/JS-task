@@ -16,6 +16,7 @@ body{
   font-size: 12px;
   line-height: 1.2;
   color:#7d7979;
+  padding-top: 10px;
 }
 header{
   height: 30px;
@@ -23,7 +24,7 @@ header{
 }
 header .search-input{
   border-radius: 10px;
-  margin:10px;
+  margin: 0px 10px;
   height: 100%;
   display: flex;
   background: rgb(251, 251, 251);
