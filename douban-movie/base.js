@@ -4,8 +4,13 @@ $('footer>div').on('click',function(){
   $(this).addClass('active').siblings().removeClass("active");
 })
 var reqStart = 0
+var isloading = false //避免重复请求
 start()
+
 function start(){
+  if(isloading){return}
+  isloading = true
+  $('.loading').show();
 $.ajax({
   url:"https://api.douban.com/v2/movie/top250",
   type:"GET",
@@ -18,12 +23,18 @@ $.ajax({
   console.log(ret)
   setData(ret)
   reqStart += 20
-}).fail(function(){console.log('error')})
+}).fail(function(){console.log('error')}).always(function(){
+  isloading = false
+  $('.loading').hide()
+})
 }
-
+// 节流
+var clock
 $('main').scroll(function(){
+  if(clock){clearTimeout(clock)}
+  clock = setTimeout(function(){
   if($('section').eq(0).height().toFixed(0)==($('main').scrollTop()+$('main').height()).toFixed(0)){
-    start()}
+    start()}},300)
 })
 
 function setData(data){
@@ -78,7 +89,7 @@ function setData(data){
       })
       return actorsArr.join('/');
     })
-    $('section').eq(0).append($node)
+      $('.container-top250').append($node)
   })
 
   function rating(node,num){

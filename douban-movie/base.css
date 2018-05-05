@@ -15,13 +15,37 @@ body{
   background-color: white;
   font-size: 12px;
   line-height: 1.2;
-  color:#aaa;
+  color:#7d7979;
 }
 header{
   height: 30px;
+  margin-bottom: 10px;
+}
+header .search-input{
+  border-radius: 10px;
+  margin:10px 10px;
+  height: 100%;
+  display: flex;
+  background: rgb(251, 251, 251);
+  align-items: center;
+}
+header span{
+  display: inline-block;
+  padding-left: 10px;
+  padding-top: 5px;
+}
+header input{
+  flex: 1;
+  margin-left: 5px;
+  height: 100%;
+  border: none;
+  background:transparent;
+}
+header input::-webkit-input-placeholder{
+  color: #dad6d6;
 }
 main{
-  height: calc(100vh - 30px - 50px);
+  height: calc(100vh - 30px - 10px - 50px);
   /* footer设置为50px即可 */
   /* 用于动态计算长度值。需要注意的是，运算符前后都需要保留一个空格 */
   overflow: scroll;
@@ -80,6 +104,21 @@ main>section:first-child{
   width: 16px;
   height: 16px;
   background-image: url('img/star-blank.png');
+}
+/* loading */
+.loading{
+  padding: 5px;
+  text-align: center;
+  display: none;
+}
+.loading .iconfont{
+  display: inline-block; 
+  /* 使用动画需要是块元素，如果设置为块元素，会包括宽高整体旋转 */
+  animation: 1s rotate linear infinite;
+}
+@keyframes rotate{
+  0%{transform: rotate(0deg);}
+  100%{transform: rotate(360deg);}
 }
 /* footer */
 footer{
