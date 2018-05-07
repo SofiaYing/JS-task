@@ -1,28 +1,34 @@
-*{
+* {
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
 }
-html,body{
+
+html,
+body {
   height: 100%;
 }
-a{
+
+a {
   text-decoration: none;
   color: #333;
 }
-body{
+
+body {
   position: relative;
   background-color: white;
   font-size: 12px;
   line-height: 1.2;
-  color:#7d7979;
+  color: #7d7979;
   padding-top: 10px;
 }
-header{
+
+.body-header {
   height: 30px;
   margin-bottom: 10px;
 }
-header .search-input{
+
+.body-header .search-input {
   border-radius: 10px;
   margin: 0px 10px;
   height: 100%;
@@ -30,118 +36,170 @@ header .search-input{
   background: rgb(251, 251, 251);
   align-items: center;
 }
-header span{
+
+.body-header span {
   display: inline-block;
   padding-left: 10px;
   padding-top: 5px;
 }
-header input{
+
+.body-header input {
   flex: 1;
   margin-left: 5px;
   height: 100%;
   border: none;
-  background:transparent;
+  background: transparent;
 }
-header input::-webkit-input-placeholder{
+
+.body-header input::-webkit-input-placeholder {
   color: #dad6d6;
 }
-main{
-  height: calc(100vh - 30px - 20px - 50px);
+
+main {
+  height: calc(100vh - 30px - 20px - 50px - 30px);
   /* footer设置为50px即可 */
   /* 用于动态计算长度值。需要注意的是，运算符前后都需要保留一个空格 */
   overflow: scroll;
-  -webkit-overflow-scrolling: touch; /* ios上增加弹性 */
+  -webkit-overflow-scrolling: touch;
+  /* ios上增加弹性 */
 }
 
-main>section{
+main>section {
   display: none;
 }
-main>section:first-child{
+
+main>section:first-child {
   display: block;
 }
+
+#ranking>.ranking-sub {
+  display: none;
+}
+
+#ranking>.ranking-sub:first-child {
+  display: block;
+}
+/* section header */
+.ranking-header {
+  height: 30px;
+  display: flex;
+  border-bottom: 1px solid #ccc;
+}
+
+.ranking-header>div {
+  flex: 1;
+  text-align: center;
+}
+
+.ranking-header .active {
+  color: #111;
+  border-bottom: 3px solid black;
+}
+
 /* movie item */
-.item{
+
+.item {
   border-bottom: 1px solid #ccc;
   padding: 10px 0px;
   margin-left: 10px;
 }
-.item a{
+
+.item a {
   display: block;
   display: flex;
 }
-.item .cover-image, .item .cover-image img{
+
+.item .cover-image,
+.item .cover-image img {
   width: 70px;
 }
-.item .movie-instruction{
+
+.item .movie-instruction {
   flex: 1;
   padding-left: 10px;
 }
-.item .movie-instruction h2{
+
+.item .movie-instruction h2 {
   font-size: 16px;
 }
-.item .movie-instruction .detail{
+
+.item .movie-instruction .detail {
   color: #999;
   margin-top: 4px;
 }
-.item .movie-instruction .score{
+
+.item .movie-instruction .score {
   vertical-align: text-top;
   line-height: 11px;
 }
 
-.starFull{
+.starFull {
   display: inline-block;
   width: 16px;
   height: 16px;
   background-image: url('img/star.png');
 }
-.starHalf{
+
+.starHalf {
   display: inline-block;
   width: 16px;
   height: 16px;
   background-image: url('img/star-half.png');
 }
-.starBlank{
+
+.starBlank {
   display: inline-block;
   width: 16px;
   height: 16px;
   background-image: url('img/star-blank.png');
 }
+
 /* loading */
-.loading{
+
+.loading {
   padding: 5px;
   text-align: center;
-  display: none;
 }
-.loading .iconfont{
-  display: inline-block; 
+.loading .iconfont {
+  display: inline-block;
   /* 使用动画需要是块元素，如果设置为块元素，会包括宽高整体旋转 */
   animation: 1s rotate linear infinite;
 }
-@keyframes rotate{
-  0%{transform: rotate(0deg);}
-  100%{transform: rotate(360deg);}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
+
 /* footer */
-footer{
-/* 固定页脚，不要用fixed，会有很多问题 */
+
+footer {
+  /* 固定页脚，不要用fixed，会有很多问题 */
   height: 50px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
   display: flex;
   border-top: 1px solid #ccc;
 }
-footer>div{
-  flex:1;
-  text-align:center;
+
+footer>div {
+  flex: 1;
+  text-align: center;
   display: flex;
   flex-direction: column;
 }
-footer>div span{
+
+footer>div span {
   flex: 1;
   padding-top: 3px;
 }
-footer .active{
+
+footer .active {
   color: #111;
 }
-
-
-
-

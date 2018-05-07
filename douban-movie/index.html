@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
@@ -8,17 +9,28 @@
   <link rel="stylesheet" href="base.css">
   <link rel="stylesheet" type="text/css" href="icon/iconfont.css">
 </head>
+
 <body>
-    <header>
-        <div class="search-input">
-          <span class="iconfont icon-search"></span>
-          <input type="text" placeholder="电影/电视剧/影人">
-        </div>
-      </header>
+  <header class="body-header">
+    <div class="search-input">
+      <span class="iconfont icon-search"></span>
+      <input type="text" placeholder="电影/电视剧/影人">
+    </div>
+  </header>
+  <div class="ranking-header">
+    <div class="active">
+      <span>Top250</span>
+    </div>
+    <div>
+      <span>北美</span>
+    </div>
+  </div>
   <main>
-    <section>
-      <div class="container-top250">
-      <!-- <div class="item">
+    <section id="ranking">
+
+      <div class="ranking-sub top250">
+        <div class="container-ranking-top250">
+          <!-- <div class="item">
         <a href="#">
           <div class="cover-image"><img></div>
           <div class="movie-instruction">
@@ -30,16 +42,32 @@
           </div>
         </a>
       </div> -->
+        </div>
       </div>
-      <div class="loading"><span class="iconfont icon-loading"></span></div>
+      <div class="ranking-sub na">
+        <div class="container-ranking-na">
+        </div>
+
+      </div>
+      <div class="loading">
+        <span class="iconfont icon-loading"></span>
+      </div>
     </section>
     <section>
     </section>
   </main>
   <footer>
-    <div class="active"><span class="iconfont icon-top250"></span><span>Top250</span></div>
-    <div><span class="iconfont icon-search"></span><span>找片</span></div>
+    <div id='footer-ranking' class="active">
+      <span class="iconfont icon-top250"></span>
+      <span>排行</span>
+    </div>
+    <div id="footer-search">
+      <span class="iconfont icon-search"></span>
+      <span>找片</span>
+    </div>
   </footer>
+  <script>
+  </script>
   <script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
   <script src="base.js"></script>
 </body>
