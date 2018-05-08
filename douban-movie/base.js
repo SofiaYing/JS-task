@@ -51,12 +51,13 @@ $('main').scroll(function () {
   if (clock) {
     clearTimeout(clock)
   }
+  if(reqStart<=240){
   clock = setTimeout(function () {
     if ($('section').eq(0).height().toFixed(0) == ($('main').scrollTop() + $('main').height()).toFixed(0)) {
-      start()
+      start() 
     }
   }, 300)
-})
+}})
 
 function setData(data) {
   // 用字符串拼接的方式，容易发生XSS攻击，如<script>alert(1)</script>，会读取操作
