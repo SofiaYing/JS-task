@@ -17,6 +17,7 @@
       <input type="text" placeholder="电影/电视剧/影人">
     </div>
   </header>
+  <div class="container-all">
   <div class="ranking-header">
     <div class="active">
       <span>Top250</span>
@@ -29,6 +30,7 @@
     <section id="ranking">
 
       <div class="ranking-sub top250">
+        
         <div class="container-ranking-top250">
           <!-- <div class="item">
         <a href="#">
@@ -43,19 +45,29 @@
         </a>
       </div> -->
         </div>
+        <div class="loading">
+          <span class="iconfont icon-loading"></span>
+        </div>
       </div>
       <div class="ranking-sub na">
         <div class="container-ranking-na">
         </div>
-
+        <div class="loading">
+            <span class="iconfont icon-loading"></span>
+          </div>
       </div>
-      <div class="loading">
+      <!-- <div class="loading">
         <span class="iconfont icon-loading"></span>
-      </div>
+      </div> -->
     </section>
-    <section>
+    <section class='search'>
+        <!-- <div class="item"></div> -->
+    </section>
+    <section class="real-search">
+      
     </section>
   </main>
+  </div>
   <footer>
     <div id='footer-ranking' class="active">
       <span class="iconfont icon-top250"></span>
@@ -69,7 +81,7 @@
   <script>
   </script>
   <script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
-  <script src="base.js"></script>
+  <script src="index.js"></script>
 </body>
 
 </html>
