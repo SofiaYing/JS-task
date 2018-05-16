@@ -88,6 +88,7 @@ var top250 = {
         _this.isFinish = true
       }
       callback && callback(req)
+      //https://segmentfault.com/q/1010000003839457/a-1020000003839462
     }).fail(function () {
       console.log('数据异常！')
     }).always(function () {

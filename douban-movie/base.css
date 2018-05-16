@@ -129,6 +129,7 @@ section,.top250{
 .item .cover-image,
 .item .cover-image img {
   width: 70px;
+  height: 100px;
 }
 
 .item .movie-instruction {
