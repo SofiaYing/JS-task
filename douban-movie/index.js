@@ -335,8 +335,8 @@ var search = {
       this.$footerRanking = $('#footer-ranking')
       this.$panels = $('section');
       this.$footerSearch = $('#footer-search');
-     // this.$footerTabs = $('footer>div');
-     this.$rankingHeader = $('.ranking-header');
+      this.$rankingHeader = $('.ranking-header');
+      //this.$img = $('img')
       this.bind()
     },
     bind: function () {
@@ -344,7 +344,6 @@ var search = {
       this.$search.find('input').keydown(function (event) {
         if(event.keyCode == 13){
           if(_this.$footerRanking.hasClass('active')){
-           // var index = _this.$footerTabs.index();
             _this.$footerSearch.addClass('active').siblings().removeClass('active');
             _this.$panels.hide().eq(1).fadeIn();
             _this.$rankingHeader.hide();
