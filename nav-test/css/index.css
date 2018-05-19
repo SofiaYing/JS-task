@@ -22,13 +22,16 @@ body {
 }
 
 header {
-  width: 1550px;
+  max-width: 3000px;
+  min-width: 1550px;
   height: 68px;
   background-color: #373737;
   color: white;
   padding-left: 305px;
 }
-
+header,nav{
+  width: 100%;
+}
 header .header-container {
   width: 940px;
   height: 100%;
@@ -204,9 +207,10 @@ header .header-container .header-right .dropdown-container {
   font-family: Nexa-Regular;
   font-size: 18px;
 }
-
+/* nav */
 .nav {
-  width: 1245px;
+  min-width: 1245px;
+  max-width: 2695px;
   height: 68px;
   margin-left: 305px;
   background-color: #474747;
