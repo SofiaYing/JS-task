@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    ul,li,a{list-style: none;
+    text-decoration: none;}
+    a{
+      color: black;
+    }
+    .parent{
+      display: flex;
+      justify-content: space-between;
+      background: cadetblue;
+    }
+    .child1{
+      width: 100px;
+      background: violet;
+      text-align: center;
+      line-height: 36px;
+      height: 36px;
+    }
+    .child2{
+      display: flex;
+      justify-content: space-around;
+      background: yellowgreen;
+    }
+    .child2>.nav-item{
+      margin: 5px;
+    }
+    .parent>.nav-ph{
+          display: none;
+        }
+        
+    .banner{
+      width: 800px;
+      height: 300px;
+      margin: 10px auto;
+      background: cornflowerblue;
+      /* 用background可以避免img带来的因屏幕大小改变而产生的图片变形 */
+      background: transparent url(http://imgstore.cdn.sogou.com/app/a/100540002/402468.jpg) no-repeat center;
+      /* 背景图片尽可能显示全 */
+      background-size: cover;
+    }
+    /* 一排四个图片，中间一共三个间距，总宽800px，要事先计算好每个图片和间距占据位置 */
+
+    /* .pictures {
+      width: 800px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    .picture {
+      width: 194px;
+      height: 194px;
+      margin-top: 4px;
+      margin-bottom: 4px;
+      background: aquamarine;
+    } */
+
+    /* 如果是7个图片呢？需要添加margin-container，利用负margin */
+
+    .pictures {
+      width: 800px;
+      margin: 0 auto;
+      overflow: hidden;
+    }
+
+    .margin-container {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0 -4px;
+    }
+
+    .picture {
+      width: calc(25% - 8px);
+      /* 不写死宽度 */
+      /* 
+      Bad: calc(100%-88px)
+      Good: calc(100% - 88px) 
+      */
+      /* 如果去掉picture的width，能够自适应，每排一直是4个图片 */
+      height: 194px;
+      margin: 4px;
+      background: aquamarine;
+      border-radius: 50%;
+    }
+
+
+    /* 广告栏 固定宽度左右布局 */
+
+    .art {
+      background: bisque;
+      width: 800px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+    }
+    .art>.sider {
+      width: calc(33.33333% - 20px);
+      height: 300px;
+      border: 1px solid black;
+    }
+    .art>.main {
+      width: 66.66666%;
+      height: 300px;
+    }
+    .nav-ph .menu-ul{
+      display: none;
+    }
+    /* 建议优先做移动端样式 */
+    @media (max-width: 420px){
+    .parent .nav-ph{
+      display: block;
+      position: relative;
+    }
+    #menu{
+      line-height: 36px;
+      height: 36px;
+      display: block;
+      margin-right: 10px;
+    }
+    .nav-ph .active{
+      display: block;
+      position: absolute;
+      top: 36px;
+    }
+      .parent>.nav-pc{
+        display: none;
+      }
+      .banner{
+        width: auto;
+      }
+      .pictures{
+        width: auto;
+      }
+      .picture{
+        width: calc(50% - 8px);
+      }
+      .art{
+        width: auto;
+        flex-direction: column;
+      }
+      .art>.sider,.art>.main{
+        width: auto;
+        height: auto;
+      }
+    }
+  </style>
+  <div class="parent">
+    <div class='child1'>logo</div>
+    <div class='child2 nav-pc'>
+      <div class='nav-item'>导航</div>
+      <div class='nav-item'>导航</div>
+      <div class='nav-item'>导航</div>
+    </div>
+    <div class="nav-ph">
+      <div id="menu">menu</div>
+      <ul class='menu-ul'id="menuItems">
+        <li><a href="#">导航1</a></li>
+        <li><a href="#">导航2</a></li>
+        <li><a href="#">导航3</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="banner"></div>
+  <div class="pictures">
+    <div class="margin-container">
+    <div class="picture"></div>
+    <div class="picture"></div>
+    <div class="picture"></div>
+    <div class="picture"></div>
+    <div class="picture"></div>
+    <div class="picture"></div>
+    <div class="picture"></div>
+    <!-- <div class="picture"></div> -->
+    </div>
+  </div>
+  
+  <div class="art">
+    <!-- 尽量不要写ad 很多会直接屏蔽 -->
+    <div class="sider">
+      广告
+    </div>
+    <div class="main">
+      信息
+    </div>
+  </div>
+<script>
+  menu.onclick = function(){
+    menuItems.classList.toggle('active');
+  }
+</script>
+</body>
+</html>

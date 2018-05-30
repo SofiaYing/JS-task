@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+    <style>
+        .clearfix::after{
+          content:'';
+          display: block;
+          clear:both;
+        }
+        .parent{
+          margin-left:auto;
+          margin-right:auto;
+          border: 1px solid black; 
+        }
+        .child1{
+          float:left;
+          height: 36px;
+          width: 100px;
+          background:blue;
+          line-height: 36px;
+          text-align: center;
+        }
+        .child2{
+          float:right;
+          background: yellow;
+          line-height: 24px;
+          padding: 6px 0;
+        }
+        .nav-item{
+          float:left;
+          margin-right: 10px;
+        }
+        
+        /* 一排四个图片，中间一共三个间距，总宽800px，要事先计算好每个图片和间距占据位置 */
+        .pictures{
+          width: 800px;
+          margin: 0 auto;
+        }
+        .picture{
+          float: left;
+          width: 194px;
+          height: 194px;
+          margin: 4px;
+          background: rebeccapurple;
+        }
+        /* 为了去掉左右margin */
+        /* 
+        .picture:nth-child(4n+1){
+          margin-left: 0;
+        }
+        .picture:nth-child(4n){
+          margin-right: 0;
+        } */
+        /* 兼容IE  */
+        /* 因为picture要用margin：auto居中，所以要套一层div */
+        .margin-container{
+          margin-left: -4px;
+          margin-right: -4px;
+        }
+        /* 广告栏 固定宽度左右布局 */
+        .art{
+          background: bisque;
+          width: 800px;
+          margin: 0 auto;
+        }
+        .art>.sider{
+          float: left;
+          width: 33.33333%;
+          /* 不添加div .sider-container */
+          /* 不支持IE
+          width:calc(33.33333%-20px)
+          margin-right:20px;
+          */
+        }
+        .art>.main{
+          float: left;
+          width: 66.66666px;
+        }
+        .sider>.sider-container{
+          margin-right: 20px;
+          height: 300px;/* 高度尽量给内容，用内容区撑父元素 */
+          border: 1px solid black;
+        }
+        </style>
+        <div class="clearfix parent">
+          <div class='child1'>logo</div>
+          <div class='child2 nav-pc clearfix'>
+            <div class='nav-item'>导航</div>
+            <div class='nav-item'>导航</div>
+            <div class='nav-item'>导航</div>
+          </div>
+
+          </div>
+        </div>
+        <div class="pictures clearfix">
+          <div class="margin-container clearfix">
+          <div class="picture"></div>
+          <div class="picture"></div>
+          <div class="picture"></div>
+          <div class="picture"></div>
+          <div class="picture"></div>
+          <div class="picture"></div>
+          <div class="picture"></div>
+          <div class="picture"></div>
+          </div>
+        </div>
+        <div class="art clearfix">
+          <!-- 尽量不要写ad 很多会直接屏蔽 -->
+          <div class="sider">
+            <div class="sider-container">
+            <div>广告</div>
+            <div>广告</div>
+          </div>
+          </div>
+          <div class="main">
+            <div>信息</div>
+          </div>
+        </div>
+</html>
