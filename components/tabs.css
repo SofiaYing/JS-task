@@ -1,0 +1,24 @@
+.tabs>ul{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+.tabs>ul>li{
+  padding: 8px 20px;
+  margin-bottom: 10px;
+}
+.tabs>ul>li:hover{
+  color: teal;
+}
+.tabs>ul>li.active{
+  color: white;
+  background: cadetblue;
+  border-radius: 10%;
+}
+.tabs .tabs-content>div{
+  display: none;
+}
+.tabs .tabs-content>div.active{
+  display: block;
+}
