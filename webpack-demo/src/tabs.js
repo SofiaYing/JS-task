@@ -1,5 +1,5 @@
 import $ from 'jquery';
-import './tabs.css';
+
 export default class Tabs{
   constructor(selector){
     this.elements = $(selector);

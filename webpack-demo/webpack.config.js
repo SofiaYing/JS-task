@@ -5,30 +5,30 @@ const HTMLWebpackPlugin = require('html-webpack-plugin');
 //我们用 HtmlWebpackPlugin 来解决这个问题。
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 //在每次构建前清理 /dist 文件夹
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
-  entry: {
-    app: './src/index.js',
-    tabs: './src/tabs.js'
-  },
+  entry: './src/index.js',
   plugins: [
     new CleanWebpackPlugin(['dist']),
     new HTMLWebpackPlugin({
       template: './src/index.html',
       inject:'body'
-    })
+    }),
+    new ExtractTextPlugin("styles.css"),
   ],
   output: {
-    filename: '[name].bundle.js',
+    filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist')
   },
   module: {
-    rules: [{
+    rules: [
+      {
         test: /\.css$/,
-        use: [
-          'style-loader',
-          'css-loader'
-        ]
+        use: ExtractTextPlugin.extract({
+          fallback: "style-loader",
+          use: "css-loader"
+        })
       },
       {
         test: /\.(png|svg|jpg|gif)$/,
