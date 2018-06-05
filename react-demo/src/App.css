@@ -1,1 +1,63 @@
+#root{
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+}
+.App{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.inputWrapper{
+  width: 100%;
+}
+.input{
+  margin-bottom: 10px;
+  padding: 5px 10px;
+  width: 100%;
+  border: 1px solid #c7c7c7;/* 设置圆角时可去除阴影 */
+  border-radius: 6px;
+  outline: none;/* 可去除聚焦时的外边框 */
+}
+.todoWrapper{
+  width: 100%;
+}
+.checkboxWrapper{
+  position: relative;
+  padding-right: 50px;
+  cursor: default;
+  width: 100%;
+}
+.delete{
+  position: absolute;
+  right: 0;
+  color: brown;
+  font-weight: bold;
+}
+#checkbox{
+  /* display: none; */
+  margin-right: 10px;
+}
+#checkbox + label{
+  color: #49b18e;
+}
+.checkboxContent{
+  padding: 5px;
+}
+.checkboxContent.done{
+  opacity:.6;
+  text-decoration: line-through;
+}
+.checkboxContent.done:before {
+	content:'';
+	position:absolute;
+	top:50%;
+	left:-.5rem;
+	display:block;
+	width:0%;
+	height:1px;
+	background:#FFF;
+	animation:strikeitem .3s ease-out 0s forwards;
+}
+
 
